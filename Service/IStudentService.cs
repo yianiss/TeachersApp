@@ -1,15 +1,18 @@
-﻿using SevStudentsApp.DTO;
+﻿ using SevStudentsApp.DTO;
 using SevStudentsApp.Models;
 
 namespace SevStudentsApp.Service
 {
     public interface IStudentService
     {
-        List<Student> GetAllStudents();
-        void InsertStudent(StudentDTO? dto);
-        void UpdateStudent(StudentDTO? dto);
-        Student? DeleteStudent(StudentDTO? dto);
-        Student? GetStudent(int id);
-        
+        public List<Student> GetAllStudents();
+
+        public void InsertStudent(StudentDTO? dto);
+
+        public void UpdateStudent(StudentDTO? dto);
+
+        public Student? DeleteStudent(StudentDTO? dto);
+
+        public Student? GetStudent(int id);
     }
 }

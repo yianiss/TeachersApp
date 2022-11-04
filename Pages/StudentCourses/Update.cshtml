@@ -1,0 +1,43 @@
+﻿@page
+@model SevStudentsApp.Pages.StudentCourses.UpdateModel
+@{
+}
+
+<h2>Update Registration</h2>
+@if (!Model.errorMessage.Equals(""))
+{
+    <h2><strong>@Model.errorMessage</strong></h2>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <input type="hidden" class="form-control" name="id" value="@Model.studentcourseDto.Id" />
+
+    </div>
+
+    <div class="row mb-3">
+        <label for="student" class="col-md-1 col-form-label">Μαθητής</label>
+        <div>
+            <input type="text" class="form-control" name="student" id="student" placeholder="Enter student" value="@Model.studentcourseDto.StudentId" />
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="courseid" class="col-md-1 col-form-label">Μάθημα</label>
+        <div>
+            <input type="text" class="form-control" name="courseid" id="courseid" placeholder="Enter course" value="@Model.studentcourseDto.CourseId" />
+
+        </div>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-md-1 col-md-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="offset-md-1 col-md-3 d-grid">
+            <a href="/" role="button" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>

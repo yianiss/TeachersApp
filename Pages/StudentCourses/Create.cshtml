@@ -1,0 +1,45 @@
+﻿@page
+@model SevStudentsApp.Pages.StudentCourses.CreateModel
+@{
+}
+
+<h2>New Registration</h2>
+@if (!Model.errorMessage.Equals(""))
+{
+    <h2><strong>@Model.errorMessage</strong></h2>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label for="description" class="col-md-1 col-form-label">Μαθητής</label>
+        <div>
+            <input type="text" class="form-control" name="studentid" id="studentid" placeholder="Enter student" value="@Model.studentcourseDto.StudentId" />
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="courseId" class="col-md-1 col-form-label">Μάθημα</label>
+        <div>
+            <input type="text" class="form-control" name="courseId" id="courseId" placeholder="Enter course" value="@Model.studentcourseDto.CourseId" />
+            @*<div class="form-group">
+            @Html.LabelFor(model => model.Teachers )
+            @Html.DropDownListFor(model => model.SelectRegionId, Model.Regions, "Choose... ")
+            </div>*@
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="row mb-3">
+        <div class="offset-md-1 col-md-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="offset-md-1 col-md-3 d-grid">
+            <a href="/" role="button" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>

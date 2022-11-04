@@ -1,0 +1,36 @@
+﻿@page
+@model SevStudentsApp.Pages.StudentCourses.IndexModel
+@{
+}
+
+<h2>List of Registrations</h2>
+
+<a class="btn btn-primary btn-sm" href="/StudentCourses/Create">New Registration</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>StudentId</th>
+            <th>CourseId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.studentcourses is not null)
+        {
+            @foreach (var studentcourse in Model.studentcourses)
+            {
+                <tr>
+                    <td>@studentcourse.Id</td>
+                    <td>@studentcourse.StudentId</td>
+                    <td>@studentcourse.CourseId</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/StudentCourses/Update?id=@studentcourse.Id">Update</a>
+                        <a class="btn btn-primary btn-sm" href="/StudentCourses/Delete?id=@studentcourse.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

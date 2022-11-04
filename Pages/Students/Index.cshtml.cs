@@ -21,8 +21,8 @@ namespace SevStudentsApp.Pages.Students
 
         public IActionResult OnGet()
         {
+            students = service!.GetAllStudents();      
 
-            students = service!.GetAllStudents();
             return Page();
         }
     }
